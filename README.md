@@ -8,14 +8,14 @@ Pull and run
 
 ```bash
 docker pull theodesp/beanstalkd-alpine
-docker run -i --name beanstalkd -p 10022:22 -p 11300:11300 -v beanstalkd:/data <image> 
+docker run -i --name beanstalkd -p 10022:22 -p 11300:11300 -v beanstalkd:/data `docker images -q theodesp/beanstalkd-alpine`
 ```
 
 ## Netcat Examples
 * Connect to the container and use netcat to check the server
 
 ```bash
-docker run -it 14b208275521 /bin/sh
+docker run -it `docker ps -aqf "name=beanstalkd"` /bin/sh
   
 # Stats
 echo -e "stats\r\n" | nc localhost 11300
