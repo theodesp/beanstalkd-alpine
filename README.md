@@ -1,6 +1,6 @@
 # Beanstalkd Alpine
 
-A minimal Beanstalkd deamon for docker using the latest Alpine Linux.
+A minimal Supervisor managed Beanstalkd deamon for docker using the latest Alpine Linux.
 
 
 ## Usage
@@ -12,7 +12,7 @@ docker run -i --name beanstalkd -p 10022:22 -p 11300:11300 -v beanstalkd:/data `
 ```
 
 ## Netcat Examples
-* Connect to the container and use netcat to check the server
+Connect to the container and use netcat to check the server
 
 ```bash
 docker run -it `docker ps -aqf "name=beanstalkd"` /bin/sh
